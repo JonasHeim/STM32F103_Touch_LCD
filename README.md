@@ -5,8 +5,7 @@ The [STM32F103C8T6](http://www.st.com/en/microcontrollers/stm32f103c8.html) (ARM
 The touchscreen is interfaced via a [XPT2046](https://www.buydisplay.com/download/ic/XPT2046.pdf) touchscreen-controller using SPI communication.
 The LCD is interfaced via the [ILI9341](https://cdn-shop.adafruit.com/datasheets/ILI9341.pdf) LCD driver using SPI communication.
 
-Please beware:
---------------
+*Please beware:*
 This project uses the [STM32 Standard Peripheral Library](http://www.st.com/en/embedded-software/stm32-standard-peripheral-libraries.html?querycriteria=productId=LN1939), which is deprecated.
 
 
