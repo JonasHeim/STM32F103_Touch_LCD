@@ -16,3 +16,11 @@ This project uses the [STM32 Standard Peripheral Library](http://www.st.com/en/e
 - [OpenOCD+GDB (v0.10.0)](https://gnu-mcu-eclipse.github.io/debug/openocd/)
 
 Built on Arch-Linux (4.14.13-1-ARCH).
+
+Bottom view of LCD module:
+--------------------------
+![LCD bottom view](img/LCD_Touch_Bottom.jpg)
+
+Evaluation system on a breadboard:
+--------------------------
+![breadboard view](img/LCD_Touch_Eval.jpg)
