@@ -1,6 +1,6 @@
-# Touchscreen and LCD (2.8") via SPI using the STM32F103
+# Touchscreen and LCD (2.4") via SPI using the STM32F103
 
-Demonstration project using a 2.8" LCD with integrated touchscreen.
+Demonstration project using a 2.4" LCD with integrated touchscreen.
 The [STM32F103C8T6](http://www.st.com/en/microcontrollers/stm32f103c8.html) (ARM Cortex-M3) is used within a small development board.
 The touchscreen is interfaced via a [XPT2046](https://www.buydisplay.com/download/ic/XPT2046.pdf) touchscreen-controller using SPI communication.
 The LCD is interfaced via the [ILI9341](https://cdn-shop.adafruit.com/datasheets/ILI9341.pdf) LCD driver using SPI communication.
