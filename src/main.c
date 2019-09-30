@@ -62,10 +62,17 @@ const UART_InitTypeDef UART1_Init =
   .OverSampling = UART_OVERSAMPLING_16,
 };
 
+const SPI_InitTypeDef SPI1_Init =
+{
+  
+
+};
+
 uint8_t uart1_tx_buffer[100];
 uint8_t uart1_rx_buffer[100];
 
 UART_HandleTypeDef UART1_Handle;
+SPI_HandleTypeDef SPI1_Handle;
 
 /* FreeRTOS stuff */
 void task_2(void*);
@@ -83,6 +90,7 @@ int main(void)
   UART1_Handle.pRxBuffPtr   = uart1_rx_buffer;
   UART1_Handle.RxXferSize   = 100;
   UART1_Handle.RxXferCount  = 1;
+
 
   SystemClock_Config();
   if(HAL_OK != HAL_Init())
@@ -107,9 +115,11 @@ int main(void)
   BSP_LED_Init(LED_GREEN);
 
   if(HAL_OK != BSP_COM_Init(COM0, &UART1_Handle))
-  {
+  { 
     while(1){};
   }
+
+  BSP_SPI_Init(BSP_SPI0, &SPI1_Handle);
 
   vTraceEnable(TRC_START);
 

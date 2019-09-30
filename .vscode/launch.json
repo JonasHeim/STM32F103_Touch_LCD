@@ -6,17 +6,17 @@
     "configurations": [
         {
             "cwd": "${workspaceRoot}",
-            "executable": "${workspaceRoot}/build/LCD.elf",
+            "executable": "build/LCD.elf",
             "name": "Debug STM32F103C8T6",
             "request": "launch",
             "type": "cortex-debug",
             "servertype": "openocd",
-            "device": "STM32F103C8T6",
+            "device": "STM32F103C8",
             "configFiles": [
-                "interface/stlink-v2.cfg",
+                "interface/stlink-v2-1.cfg",
                 "target/stm32f1x.cfg",
             ],
-            "preLaunchTask": "Flash",
+            //"preLaunchTask": "Flash",
             "runToMain": true
         }
     ]

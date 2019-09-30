@@ -28,7 +28,7 @@
                 "-f",
                 "target/stm32f1x.cfg",
                 "-c",
-                "\"program ./build/LCD.elf verify reset\""
+                "\"program ./build/LCD.elf verify reset exit\""
             ],
             "problemMatcher": []
         },

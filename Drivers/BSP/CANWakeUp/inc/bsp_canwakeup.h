@@ -21,7 +21,7 @@ typedef enum
   LED_RED  = LED0,
   LED_GREEN = LED1
     
-} Led_TypeDef;
+} Bsp_Led_TypeDef;
 
 typedef enum 
 {
@@ -40,12 +40,12 @@ typedef enum
 typedef enum 
 {
   COM0 = 0,
-} COM_TypeDef;
+} Bsp_COM_TypeDef;
 
 typedef enum
 {
   CAN_COM0 = 0,
-} CAN_COM_TypeDef;
+} CAN_Bsp_COM_TypeDef;
 
 typedef struct 
 {
@@ -153,21 +153,21 @@ typedef struct
 
 #define CAN_COMx_S_GPIO_CLK_DISABLE(__INDEX__)  USER_CAN_COM0_S_GPIO_CLK_DISABLE()
 
-void BSP_LED_Init(Led_TypeDef Led);
-void BSP_LED_On(Led_TypeDef Led);
-void BSP_LED_Off(Led_TypeDef Led);
-void BSP_LED_Toggle(Led_TypeDef Led);
+void BSP_LED_Init(Bsp_Led_TypeDef Led);
+void BSP_LED_On(Bsp_Led_TypeDef Led);
+void BSP_LED_Off(Bsp_Led_TypeDef Led);
+void BSP_LED_Toggle(Bsp_Led_TypeDef Led);
 
 void BSP_SW_Init(Switch_TypeDef Switch, SwitchMode_TypeDef Mode);
 GPIO_PinState BSP_SW_GetState(Switch_TypeDef Switch);
 
-HAL_StatusTypeDef BSP_COM_Init(COM_TypeDef Com, UART_HandleTypeDef *huart);
+HAL_StatusTypeDef BSP_COM_Init(Bsp_COM_TypeDef Com, UART_HandleTypeDef *huart);
 HAL_StatusTypeDef BSP_COM_Print(UART_HandleTypeDef *huart, char  *pData);
 
-HAL_StatusTypeDef BSP_CAN_COM_Init(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan);
-HAL_StatusTypeDef BSP_CAN_COM_FilterInit(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan);
-HAL_StatusTypeDef BSP_CAN_COM_Start(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan);
-HAL_StatusTypeDef BSP_CAN_COM_Send(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan, CAN_COM_Frame_TypeDef frame);
+HAL_StatusTypeDef BSP_CAN_COM_Init(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan);
+HAL_StatusTypeDef BSP_CAN_COM_FilterInit(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan);
+HAL_StatusTypeDef BSP_CAN_COM_Start(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan);
+HAL_StatusTypeDef BSP_CAN_COM_Send(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan, CAN_COM_Frame_TypeDef frame);
 
 /**
   * @}

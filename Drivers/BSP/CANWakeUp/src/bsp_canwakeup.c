@@ -48,7 +48,7 @@ const uint16_t CAN_COM_S_PIN[CAN_COMn]   = {USER_CAN_COM0_S_PIN};
   *     @arg LED0/LED_RED
   *     @arg LED1/LED_GREEN
   */
-void BSP_LED_Init(Led_TypeDef Led)
+void BSP_LED_Init(Bsp_Led_TypeDef Led)
 {
     GPIO_InitTypeDef  gpioinitstruct = {0};
 
@@ -64,17 +64,17 @@ void BSP_LED_Init(Led_TypeDef Led)
 }
 
 
-void BSP_LED_On(Led_TypeDef Led)
+void BSP_LED_On(Bsp_Led_TypeDef Led)
 {
     HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_SET);
 }
 
-void BSP_LED_Off(Led_TypeDef Led)
+void BSP_LED_Off(Bsp_Led_TypeDef Led)
 {
     HAL_GPIO_WritePin(LED_PORT[Led], LED_PIN[Led], GPIO_PIN_RESET);
 }
 
-void BSP_LED_Toggle(Led_TypeDef Led)
+void BSP_LED_Toggle(Bsp_Led_TypeDef Led)
 {
     HAL_GPIO_TogglePin(LED_PORT[Led], LED_PIN[Led]);
 }
@@ -99,7 +99,7 @@ GPIO_PinState BSP_SW_GetState(Switch_TypeDef Switch)
     return HAL_GPIO_ReadPin(SWITCH_PORT[Switch], SWITCH_PIN[Switch]);
 }
 
-HAL_StatusTypeDef BSP_COM_Init(COM_TypeDef Com, UART_HandleTypeDef *huart)
+HAL_StatusTypeDef BSP_COM_Init(Bsp_COM_TypeDef Com, UART_HandleTypeDef *huart)
 {
     HAL_StatusTypeDef ret_val = HAL_ERROR;
     GPIO_InitTypeDef  gpioinitstruct = {0};
@@ -159,7 +159,7 @@ HAL_StatusTypeDef BSP_COM_Print(UART_HandleTypeDef *huart, char *pData)
     return ret_val;
 }
 
-HAL_StatusTypeDef BSP_CAN_COM_Init(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
+HAL_StatusTypeDef BSP_CAN_COM_Init(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
 {
     HAL_StatusTypeDef ret_val;
     GPIO_InitTypeDef  gpioinitstruct = {0};
@@ -216,7 +216,7 @@ HAL_StatusTypeDef BSP_CAN_COM_Init(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
     return ret_val;
 }
 
-HAL_StatusTypeDef BSP_CAN_COM_FilterInit(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
+HAL_StatusTypeDef BSP_CAN_COM_FilterInit(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
 {
     CAN_FilterTypeDef canfilterstruct = {0};
 
@@ -233,12 +233,12 @@ HAL_StatusTypeDef BSP_CAN_COM_FilterInit(CAN_COM_TypeDef Can, CAN_HandleTypeDef 
     return HAL_CAN_ConfigFilter(hcan, &canfilterstruct);
 }
 
-HAL_StatusTypeDef BSP_CAN_COM_Start(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
+HAL_StatusTypeDef BSP_CAN_COM_Start(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan)
 {
     return HAL_CAN_Start(hcan);
 }
 
-HAL_StatusTypeDef BSP_CAN_COM_Send(CAN_COM_TypeDef Can, CAN_HandleTypeDef *hcan, CAN_COM_Frame_TypeDef frame)
+HAL_StatusTypeDef BSP_CAN_COM_Send(CAN_Bsp_COM_TypeDef Can, CAN_HandleTypeDef *hcan, CAN_COM_Frame_TypeDef frame)
 {
     uint32_t can_tx_mailbox = 0;
 

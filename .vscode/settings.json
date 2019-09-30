@@ -2,6 +2,9 @@
     "files.associations": {
         "*.sco": "python",
         "main.h": "c",
-        "bsp_lcd.h": "c"
-    }
+        "bsp_lcd.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "stm32f1xx_hal_conf.h": "c"
+    },
+    "cortex-debug.openocdPath": "/usr/bin/openocd"
 }
