@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.sco": "python",
+        "main.h": "c",
+        "bsp_lcd.h": "c"
+    }
+}
